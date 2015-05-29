@@ -25,12 +25,11 @@ public class BasicWebServiceExample {
 	private TransactionService transactionService;
 
 	@GET
-	@Path("/")
+	@Path("/user")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getMsg() {
-		final String output = "Jersey say : HELLO";
-		return Response.status(200).entity(output).build();
-
+	public User getMsg() {
+		User user = new User("Aurélien", "Cortial");
+		return user;
 	}
 
 	@GET
