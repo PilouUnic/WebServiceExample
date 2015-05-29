@@ -3,13 +3,33 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
       version="3.0"> 
-	<display-name>Restful Web Application</display-name>
+	<display-name>WebServiceExample</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+ 
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
 
 	<servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
 		<servlet-class>
-                     com.sun.jersey.spi.container.servlet.ServletContainer
-                </servlet-class>
+			<!-- Indispensable pour utiliser Spring dans les WebServices -->
+             com.sun.jersey.spi.spring.container.servlet.SpringServlet
+        </servlet-class>
 		<init-param>
 		     <param-name>com.sun.jersey.config.property.packages</param-name>
 		     <param-value>fr.web.service.example</param-value>

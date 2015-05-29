@@ -1,5 +1,6 @@
 package fr.web.service.example.basic;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class TransactionServiceTest {
 
     @Test
     public void testInstanciationTransactionService() {
-
+    	final String trueResult = "Jersey + Spring example";
+    	String recoveredResult = transactionService.save();
+    	Assert.assertTrue(trueResult.equalsIgnoreCase(recoveredResult));
     }
 }

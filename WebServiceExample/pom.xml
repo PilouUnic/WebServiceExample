@@ -50,9 +50,21 @@
 			<version>1.8</version>
 		</dependency>
 		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
 			<groupId>asm</groupId>
 			<artifactId>asm</artifactId>
 			<version>3.3.1</version>
+		</dependency>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
 		</dependency>
 
 
@@ -60,21 +72,21 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- Dépendance pour faire du spring TEST -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -116,7 +128,7 @@
 		de l'IDE. De ce fait n'importe qui voulant compiler le projet n'aura théoriquement 
 		aucun soucis -->
 	<build>
-		<finalName>ExampleProject</finalName>
+		<finalName>WebServiceExample</finalName>
 		<defaultGoal>clean package install</defaultGoal>
 		<plugins>
 			<plugin>
